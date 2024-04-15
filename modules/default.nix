@@ -24,7 +24,7 @@ in {
       after = ["network.target"];
       environment = cfg.additionalEnv;
       serviceConfig = {
-        ExecStart = "${lib.getExe cfg.package}";
+        ExecStart = "${cfg.package}/bin/imgproxy";
         Restart = "always";
         RestartSec = "10s";
         DynamicUser = true;
